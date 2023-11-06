@@ -50,22 +50,7 @@ lingkaran, batang, tabel = st.tabs(["GRAFIK LINGKARAN", "GRAFIK BATANG", "TABEL"
 
 colors = ['#ff9999','#66b3ff','#99ff99','#ffcc99','#c2c2f0','#ffb3e6', '#c2f0c2', '#ff6666']
 
-with lingkaran:
-    # Data
-    labels = data[f"Category {category}"]
-    sizes = data[f"Purchase Amount (USD) Size {size}"]
 
-    # Explode untuk bagian yang ditekankan
-    explode = (0, 0, 0, 0, 0.1, 0, 0.1, 0.2)
-
-    fig1, ax1 = plt.subplots()
-
-    # Menambahkan labels, warna, dan explode
-    ax1.pie(sizes, labels=labels, autopct='%1.1f%%', shadow=True, startangle=90, colors=colors, explode=explode)
-    ax1.axis('equal')
-
-    # Menampilkan grafik
-    st.pyplot(fig1)
 
 with batang:
     fig = px.bar(data, x=f"Category {category}", y=f"Purchase Amount (USD) Size {size}", color=colors)

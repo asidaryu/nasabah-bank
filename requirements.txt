@@ -5,6 +5,8 @@ pydeck
 streamlit
 matplotlib
 plotly
-Flask pandas scikit-learn
+Flask
+pandas
+scikit-learn
 streamlit-aggrid
 graphviz

@@ -1,8 +1,6 @@
-from streamlit_lottie import st_lottie
 import plotly.express as px
 import streamlit as st
 import pandas as pd
-import json
 
 # set konfigurasi halaman
 st.set_page_config(
@@ -19,24 +17,6 @@ st.sidebar.markdown(
 
 # Filter berdasarkan kategori
 category = st.sidebar.selectbox('Pilih Kategori', ['Pekerjaan', 'Pernikahan', 'Pendidikan', 'Kredit Macet'])
-
-# Menambahkan animasi
-def load_lottiefile(filepath: str):
-    with open(filepath, "r") as f:
-        return json.load(f)
-    
-lottie_aku = load_lottiefile ("lottie/data.json")
-with st.sidebar:
-    st_lottie(
-        lottie_aku,
-        speed= 1,
-        reverse= False,
-        loop= True,
-        quality= "high",
-        height=None,
-        width=None,
-        key= None,
-    )
 
 def main():
     # Menambahkan deskripsi
